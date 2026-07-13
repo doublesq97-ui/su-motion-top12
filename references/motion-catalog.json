@@ -5,6 +5,22 @@
   "motions": [
     {
       "index": 1,
+      "id": "typewriter",
+      "name": "Typewriter",
+      "zh": "打字机文本",
+      "role": "text",
+      "intent": ["live system", "authored sequence", "progressive statement"],
+      "triggers": ["mount", "system response"],
+      "useWhen": ["the act of text arriving communicates generation or live response"],
+      "avoidWhen": ["paragraphs", "essential instructions", "frequent repeated use"],
+      "timing": {"durationMs": 1900, "easing": "steps"},
+      "properties": ["text content", "opacity"],
+      "loop": false,
+      "reducedMotion": "Render the complete text immediately.",
+      "observedIn": ["signalis-observability"]
+    },
+    {
+      "index": 2,
       "id": "fade-blur",
       "name": "Fade & Blur",
       "zh": "淡入与模糊",
@@ -20,7 +36,7 @@
       "observedIn": ["job-board-1", "wanderlux-travel", "signalis-observability"]
     },
     {
-      "index": 2,
+      "index": 3,
       "id": "directional-slide",
       "name": "Directional Slide",
       "zh": "方向滑入",
@@ -36,7 +52,7 @@
       "observedIn": ["wanderlux-travel", "job-board-1"]
     },
     {
-      "index": 3,
+      "index": 4,
       "id": "mask-reveal",
       "name": "Mask Reveal",
       "zh": "遮罩揭示",
@@ -52,7 +68,7 @@
       "observedIn": ["autonomous-systems", "paperflow-design-layout"]
     },
     {
-      "index": 4,
+      "index": 5,
       "id": "scroll-reveal",
       "name": "Scroll Reveal",
       "zh": "滚动显现",
@@ -68,36 +84,20 @@
       "observedIn": ["aurel-luxury", "terrasprint-ai", "substance-lab"]
     },
     {
-      "index": 5,
-      "id": "parallax-depth",
-      "name": "Parallax Depth",
-      "zh": "视差景深",
-      "role": "spatial",
-      "intent": ["depth", "camera feel", "layer separation"],
-      "triggers": ["pointer", "scroll", "idle"],
-      "useWhen": ["foreground and background layers have a real spatial relationship"],
-      "avoidWhen": ["content-heavy reading surfaces", "large vestibular movement"],
-      "timing": {"durationMs": 2400, "easing": "ease-in-out"},
-      "properties": ["transform"],
-      "loop": true,
-      "reducedMotion": "Freeze layers at their resting positions.",
-      "observedIn": ["substance-lab", "meridian-migration"]
-    },
-    {
       "index": 6,
-      "id": "float-levitate",
-      "name": "Float & Levitate",
-      "zh": "漂浮与悬停",
-      "role": "ambient",
-      "intent": ["weightlessness", "soft activity", "hero atmosphere"],
-      "triggers": ["idle"],
-      "useWhen": ["one or two decorative or product objects may breathe slowly"],
-      "avoidWhen": ["text blocks", "dense controls", "multiple independent loops"],
-      "timing": {"durationMs": 3200, "easing": "ease-in-out"},
-      "properties": ["transform"],
+      "id": "shimmer-sweep",
+      "name": "Shimmer Sweep",
+      "zh": "光泽扫过",
+      "role": "polish",
+      "intent": ["material", "loading", "surface highlight"],
+      "triggers": ["mount", "hover", "loading"],
+      "useWhen": ["a controlled specular pass should reveal material or loading state"],
+      "avoidWhen": ["plain text", "multiple surfaces sweep together", "constant attention seeking"],
+      "timing": {"durationMs": 900, "delayMs": 160, "repeatDelayMs": 1400, "easing": "cubic-bezier(0.45, 0, 0.55, 1)"},
+      "properties": ["transform", "opacity", "box-shadow"],
       "loop": true,
-      "reducedMotion": "Keep objects static.",
-      "observedIn": ["terrasprint-ai", "job-board-1", "lumina-solid-cologne"]
+      "reducedMotion": "Use a static edge highlight without a moving sweep.",
+      "observedIn": ["oravia", "deciding-health", "signalis-observability"]
     },
     {
       "index": 7,
@@ -149,22 +149,6 @@
     },
     {
       "index": 10,
-      "id": "typewriter",
-      "name": "Typewriter",
-      "zh": "打字机文本",
-      "role": "text",
-      "intent": ["live system", "authored sequence", "progressive statement"],
-      "triggers": ["mount", "system response"],
-      "useWhen": ["the act of text arriving communicates generation or live response"],
-      "avoidWhen": ["paragraphs", "essential instructions", "frequent repeated use"],
-      "timing": {"durationMs": 1900, "easing": "steps"},
-      "properties": ["text content", "opacity"],
-      "loop": false,
-      "reducedMotion": "Render the complete text immediately.",
-      "observedIn": ["signalis-observability"]
-    },
-    {
-      "index": 11,
       "id": "orbit-network",
       "name": "Orbit Network",
       "zh": "轨道与网络",
@@ -180,20 +164,36 @@
       "observedIn": ["spectra", "autonomous-systems", "oravia"]
     },
     {
-      "index": 12,
-      "id": "shimmer-sweep",
-      "name": "Shimmer Sweep",
-      "zh": "光泽扫过",
-      "role": "polish",
-      "intent": ["material", "loading", "surface highlight"],
-      "triggers": ["mount", "hover", "loading"],
-      "useWhen": ["a controlled specular pass should reveal material or loading state"],
-      "avoidWhen": ["plain text", "multiple surfaces sweep together", "constant attention seeking"],
-      "timing": {"durationMs": 900, "delayMs": 160, "repeatDelayMs": 1400, "easing": "cubic-bezier(0.45, 0, 0.55, 1)"},
-      "properties": ["transform", "opacity", "box-shadow"],
+      "index": 11,
+      "id": "parallax-depth",
+      "name": "Parallax Depth",
+      "zh": "视差景深",
+      "role": "spatial",
+      "intent": ["depth", "camera feel", "layer separation"],
+      "triggers": ["pointer", "scroll", "idle"],
+      "useWhen": ["foreground and background layers have a real spatial relationship"],
+      "avoidWhen": ["content-heavy reading surfaces", "large vestibular movement"],
+      "timing": {"durationMs": 2400, "easing": "ease-in-out"},
+      "properties": ["transform"],
       "loop": true,
-      "reducedMotion": "Use a static edge highlight without a moving sweep.",
-      "observedIn": ["oravia", "deciding-health", "signalis-observability"]
+      "reducedMotion": "Freeze layers at their resting positions.",
+      "observedIn": ["substance-lab", "meridian-migration"]
+    },
+    {
+      "index": 12,
+      "id": "float-levitate",
+      "name": "Float & Levitate",
+      "zh": "漂浮与悬停",
+      "role": "ambient",
+      "intent": ["weightlessness", "soft activity", "hero atmosphere"],
+      "triggers": ["idle"],
+      "useWhen": ["one or two decorative or product objects may breathe slowly"],
+      "avoidWhen": ["text blocks", "dense controls", "multiple independent loops"],
+      "timing": {"durationMs": 3200, "easing": "ease-in-out"},
+      "properties": ["transform"],
+      "loop": true,
+      "reducedMotion": "Keep objects static.",
+      "observedIn": ["terrasprint-ai", "job-board-1", "lumina-solid-cologne"]
     }
   ]
 }

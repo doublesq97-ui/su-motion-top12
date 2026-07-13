@@ -103,8 +103,8 @@
         </div>
       </section>
       <footer class="dock">
-        <div class="dock-summary"><div class="dock-title"><small>Now presenting</small><strong id="dockEn">Fade &amp; Blur</strong><span id="dockZh">淡入与模糊</span></div><p class="dock-description" id="dockDescription">Opacity, blur and vertical translation resolve together.</p></div>
-        <div class="dock-specs"><div class="spec"><small>Category</small><b id="dockCategory">Entrance / 入场</b></div><div class="spec"><small>Timing</small><b id="dockTiming">900 ms · power3.out</b></div><div class="spec observed"><small>Observed in</small><b id="dockSources">Job Board · Wanderlux · Signalis</b></div></div>
+        <div class="dock-summary"><div class="dock-title"><small>Now presenting</small><strong id="dockEn">Typewriter</strong><span id="dockZh">打字机文本</span></div><p class="dock-description" id="dockDescription">Characters appear in measured steps with a live caret.</p></div>
+        <div class="dock-specs"><div class="spec"><small>Category</small><b id="dockCategory">Text / 文本</b></div><div class="spec"><small>Timing</small><b id="dockTiming">1900 ms · stepped</b></div><div class="spec observed"><small>Observed in</small><b id="dockSources">Signalis</b></div></div>
         <div class="dock-actions"><button class="action" id="copyMotion" type="button">复制参数</button><button class="action primary" id="replay" type="button">↻ 重播</button></div>
       </footer>
     </main>
@@ -113,18 +113,18 @@
 
   <script id="motion-catalog-json" type="application/json">
   [
+    {"id":"typewriter","en":"Typewriter","zh":"打字机文本","category":"Text / 文本","duration":"1900 ms","easing":"stepped","sources":["Signalis"],"description":"Characters appear in measured steps with a live caret."},
     {"id":"fade-blur","en":"Fade & Blur","zh":"淡入与模糊","category":"Entrance / 入场","duration":"900 ms","easing":"power3.out","sources":["Job Board","Wanderlux","Signalis"],"description":"Opacity, blur and vertical translation resolve together."},
     {"id":"directional-slide","en":"Directional Slide","zh":"方向滑入","category":"Entrance / 入场","duration":"760 ms","easing":"power4.out","sources":["Wanderlux","Job Board"],"description":"Elements enter from meaningful opposing directions."},
     {"id":"mask-reveal","en":"Mask Reveal","zh":"遮罩揭示","category":"Entrance / 入场","duration":"1100 ms","easing":"expo.out","sources":["Autonomous Systems","Paperflow"],"description":"A clipping surface uncovers content without moving its layout."},
     {"id":"scroll-reveal","en":"Scroll Reveal","zh":"滚动显现","category":"Scroll / 滚动","duration":"1800 ms","easing":"power2.inOut","sources":["Aurel Luxury","TerraSprint","Substance Lab"],"description":"A simulated viewport connects scroll position with staged arrivals."},
-    {"id":"parallax-depth","en":"Parallax Depth","zh":"视差景深","category":"Spatial / 空间","duration":"2400 ms","easing":"sine.inOut","sources":["Substance Lab","Meridian Migration"],"description":"Foreground and background move at different rates to express depth."},
-    {"id":"float-levitate","en":"Float & Levitate","zh":"漂浮与悬停","category":"Ambient / 环境","duration":"3200 ms","easing":"sine.inOut","sources":["TerraSprint","Job Board","Lumina"],"description":"Slow, offset oscillations keep a resting composition alive."},
+    {"id":"shimmer-sweep","en":"Shimmer Sweep","zh":"光泽扫过","category":"Polish / 质感","duration":"900 ms","easing":"power2.inOut","sources":["Oravia","Deciding Health","Signalis"],"description":"A narrow specular highlight crosses the material with a visible bright core."},
     {"id":"marquee","en":"Marquee","zh":"连续跑马灯","category":"Loop / 循环","duration":"9000 ms","easing":"linear","sources":["Aurel Luxury","Job Board","Meridian","Luxury Real Estate"],"description":"A seamless duplicated track creates continuous motion."},
     {"id":"line-drawing","en":"Line Drawing","zh":"线条绘制","category":"Data / 数据","duration":"1700 ms","easing":"power2.inOut","sources":["Oravia","Job Board","Signalis"],"description":"Stroke dash offset turns a path into an unfolding signal."},
     {"id":"number-ticker","en":"Number Ticker","zh":"数字滚动","category":"Data / 数据","duration":"1600 ms","easing":"power3.out","sources":["Signalis","Strategic Roadmap"],"description":"Tabular digits interpolate toward a meaningful value."},
-    {"id":"typewriter","en":"Typewriter","zh":"打字机文本","category":"Text / 文本","duration":"1900 ms","easing":"stepped","sources":["Signalis"],"description":"Characters appear in measured steps with a live caret."},
     {"id":"orbit-network","en":"Orbit Network","zh":"轨道与网络","category":"Ambient / 环境","duration":"continuous","easing":"time-driven","sources":["Spectra","Autonomous Systems","Oravia"],"description":"Canvas particles orbit, connect and respond as one system."},
-    {"id":"shimmer-sweep","en":"Shimmer Sweep","zh":"光泽扫过","category":"Polish / 质感","duration":"900 ms","easing":"power2.inOut","sources":["Oravia","Deciding Health","Signalis"],"description":"A narrow specular highlight crosses the material with a visible bright core."}
+    {"id":"parallax-depth","en":"Parallax Depth","zh":"视差景深","category":"Spatial / 空间","duration":"2400 ms","easing":"sine.inOut","sources":["Substance Lab","Meridian Migration"],"description":"Foreground and background move at different rates to express depth."},
+    {"id":"float-levitate","en":"Float & Levitate","zh":"漂浮与悬停","category":"Ambient / 环境","duration":"3200 ms","easing":"sine.inOut","sources":["TerraSprint","Job Board","Lumina"],"description":"Slow, offset oscillations keep a resting composition alive."}
   ]
   </script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js" crossorigin="anonymous"></script>

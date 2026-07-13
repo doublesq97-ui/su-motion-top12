@@ -25,7 +25,7 @@ python3 -m http.server 4173
 
 ```text
 请把这个 GitHub 仓库安装为我本机的 Codex Skill。
-仓库地址：<粘贴当前仓库链接>
+仓库地址：https://github.com/doublesq97-ui/su-motion-top12
 目标目录：~/.codex/skills/su-motion-top12
 
 安装前先检查是否已经存在同名目录；不要直接覆盖我的本地修改。
@@ -35,7 +35,7 @@ python3 -m http.server 4173
 也可以手动安装：
 
 ```bash
-git clone <repository-url> ~/.codex/skills/su-motion-top12
+git clone https://github.com/doublesq97-ui/su-motion-top12.git ~/.codex/skills/su-motion-top12
 cd ~/.codex/skills/su-motion-top12
 npm run validate
 ```
@@ -77,18 +77,18 @@ npm run validate
 
 | # | Motion | 中文 | 主要用途 |
 |---:|---|---|---|
-| 01 | Fade & Blur | 淡入与模糊 | 柔和、聚焦的高级入场 |
-| 02 | Directional Slide | 方向滑入 | 表达来源、方向与导航关系 |
-| 03 | Mask Reveal | 遮罩揭示 | 图片、标题和材质揭示 |
-| 04 | Scroll Reveal | 滚动显现 | 长页面的阅读节奏 |
-| 05 | Parallax Depth | 视差景深 | 前后景空间层次 |
-| 06 | Float & Levitate | 漂浮与悬停 | 克制的环境呼吸感 |
+| 01 | Typewriter | 打字机文本 | 实时生成或系统响应 |
+| 02 | Fade & Blur | 淡入与模糊 | 柔和、聚焦的高级入场 |
+| 03 | Directional Slide | 方向滑入 | 表达来源、方向与导航关系 |
+| 04 | Mask Reveal | 遮罩揭示 | 图片、标题和材质揭示 |
+| 05 | Scroll Reveal | 滚动显现 | 长页面的阅读节奏 |
+| 06 | Shimmer Sweep | 光泽扫过 | 材质、加载和表面高光 |
 | 07 | Marquee | 连续跑马灯 | 连续品牌、标签或内容流 |
 | 08 | Line Drawing | 线条绘制 | 路径、信号和流程关系 |
 | 09 | Number Ticker | 数字滚动 | 指标变化和达成感 |
-| 10 | Typewriter | 打字机文本 | 实时生成或系统响应 |
-| 11 | Orbit Network | 轨道与网络 | 系统关系和技术氛围 |
-| 12 | Shimmer Sweep | 光泽扫过 | 材质、加载和表面高光 |
+| 10 | Orbit Network | 轨道与网络 | 系统关系和技术氛围 |
+| 11 | Parallax Depth | 视差景深 | 前后景空间层次 |
+| 12 | Float & Levitate | 漂浮与悬停 | 克制的环境呼吸感 |
 
 ## 仓库里有什么
 

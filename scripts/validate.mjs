@@ -9,10 +9,32 @@ const catalogPath = path.join(root, 'references', 'motion-catalog.json');
 const demoPath = path.join(root, 'assets', 'motion-atlas', 'index.html');
 const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
 const demo = fs.readFileSync(demoPath, 'utf8');
+const demoCatalogMatch = demo.match(/<script id="motion-catalog-json" type="application\/json">\s*([\s\S]*?)\s*<\/script>/);
+const demoCatalog = demoCatalogMatch ? JSON.parse(demoCatalogMatch[1]) : [];
 const errors = [];
+const expectedOrder = [
+  'typewriter',
+  'fade-blur',
+  'directional-slide',
+  'mask-reveal',
+  'scroll-reveal',
+  'shimmer-sweep',
+  'marquee',
+  'line-drawing',
+  'number-ticker',
+  'orbit-network',
+  'parallax-depth',
+  'float-levitate',
+];
 
 if (catalog.coreCount !== 12) errors.push(`coreCount must be 12, got ${catalog.coreCount}`);
 if (catalog.motions.length !== 12) errors.push(`motions must contain 12 entries, got ${catalog.motions.length}`);
+if (catalog.motions.map((motion) => motion.id).join(',') !== expectedOrder.join(',')) {
+  errors.push('motions must preserve the curated common-first order');
+}
+if (demoCatalog.map((motion) => motion.id).join(',') !== expectedOrder.join(',')) {
+  errors.push('demo catalog must match the curated common-first order');
+}
 
 const ids = new Set();
 catalog.motions.forEach((motion, index) => {
