@@ -1,0 +1,4 @@
+interface:
+  display_name: "SU Motion Top 12"
+  short_description: "Curated interface motion choices for AI-built web experiences"
+  default_prompt: "Use $su-motion-top12 to choose and apply a refined motion pattern to this interface."
