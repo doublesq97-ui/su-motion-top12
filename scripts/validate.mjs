@@ -28,6 +28,11 @@ catalog.motions.forEach((motion, index) => {
 if (!demo.includes('data-theme-option="system"')) errors.push('demo: missing system theme control');
 if (!demo.includes('data-theme-option="light"')) errors.push('demo: missing light theme control');
 if (!demo.includes('data-theme-option="dark"')) errors.push('demo: missing dark theme control');
+if (!demo.includes('id="motionList"')) errors.push('demo: missing single Core 12 motion list');
+if (!demo.includes('id="dockDescription"')) errors.push('demo: missing expanded motion detail content');
+for (const legacyRail of ['topRail', 'leftRail', 'rightRail', 'mobileRail']) {
+  if (demo.includes(legacyRail)) errors.push(`demo: legacy rail remains: ${legacyRail}`);
+}
 
 if (errors.length) {
   console.error(errors.map((error) => `- ${error}`).join('\n'));
