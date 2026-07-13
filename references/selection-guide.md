@@ -1,10 +1,10 @@
 # Selection Guide
 
-Use observable interface needs instead of aesthetic adjectives alone.
+Use observable communication needs instead of aesthetic adjectives alone. Select the motion language first, then let the medium adapter translate it into interaction or timeline behavior.
 
 ## Selection Map
 
-| Interface need | Primary choices |
+| Communication need | Primary choices |
 |---|---|
 | Soft first impression | Fade & Blur |
 | Direction or navigation continuity | Directional Slide |
@@ -47,8 +47,10 @@ Avoid:
 
 When the user delegates selection:
 
-1. Match the target trigger and intent to the catalog.
-2. Prefer the lowest-intensity pattern that communicates the relationship.
-3. Preserve the existing project stack and interaction model.
-4. Return the selected ID, editable parameters, and finished result.
-5. Do not output internal scoring or chain-of-thought.
+1. Determine whether the target is Web, Video, or catalog-only.
+2. Match the target trigger or timeline cue and intent to the catalog.
+3. For Video, read `video-adapter.md` and translate interaction semantics into time rather than browser events.
+4. Prefer the lowest-intensity pattern that communicates the relationship.
+5. Preserve the existing project stack and medium model.
+6. Return the selected ID, editable parameters, finished result, and verification status.
+7. Do not output internal scoring or chain-of-thought.
