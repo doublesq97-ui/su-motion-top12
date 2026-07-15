@@ -7,6 +7,17 @@
 - Reuse the target project's established animation or video stack.
 - Do not duplicate the Core 12 into framework-specific catalogs.
 
+## Quality Preservation Redlines
+
+- Keep the Core 12 IDs, order, intent, and one-primary-plus-one-supporting composition rule stable.
+- Treat `motion-catalog.json` as the selection and timing source of truth. Treat the selected recipe profile as the concrete movement source of truth.
+- Generate the self-contained Motion Atlas payload from the catalog and recipe profiles. Do not hand-maintain a second set of overlapping parameters.
+- Make the delivered motion match the Motion Atlas profile. If a showcase scene is longer than one motion unit, name both timings explicitly instead of silently replacing the canonical duration.
+- Preserve the Atlas visual material, interaction behavior, System/Light/Dark themes, mobile layout, and reduced-motion behavior unless a reviewed change improves them.
+- Load only the selected recipe in Apply mode. More implementation detail must not make the default skill slower, noisier, or less decisive.
+- Keep the repository free of runtime package dependencies. Prefer the target project's existing stack and the self-contained Atlas.
+- Do not release a change that passes static validation but regresses browser behavior, visual hierarchy, interruption, accessibility, or frame determinism.
+
 ## Web Routing
 
 - Default to CSS and the Web Animations API for simple entrances, loops, and surface polish.

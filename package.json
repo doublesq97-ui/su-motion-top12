@@ -1,10 +1,13 @@
 {
   "name": "su-motion-top12",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "Curated decision and craft layer for AI-generated web and video motion.",
   "license": "MIT",
   "scripts": {
-    "validate": "node scripts/validate.mjs"
+    "build:atlas": "node scripts/build-atlas.mjs",
+    "check:atlas": "node scripts/build-atlas.mjs --check",
+    "validate": "node scripts/validate.mjs",
+    "check": "npm run check:atlas && npm run validate"
   }
 }

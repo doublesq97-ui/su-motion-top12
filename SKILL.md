@@ -34,6 +34,7 @@ If the user names a pattern, honor that choice. Do not replace it with an automa
 - Read [references/motion-catalog.json](references/motion-catalog.json) before listing, selecting, or applying a motion.
 - Read [references/selection-guide.md](references/selection-guide.md) when recommending, auto-selecting, or combining patterns.
 - Read [references/implementation-contract.md](references/implementation-contract.md) before producing or editing motion code.
+- After selecting a motion in Apply mode, read only its `references/recipes/{id}.md` file. The recipe profile is the same profile used by Motion Atlas; do not load all 12 recipes.
 - Read [references/video-adapter.md](references/video-adapter.md) before implementing any video, motion graphic, HyperFrames, or Remotion deliverable.
 - Use [assets/motion-atlas/index.html](assets/motion-atlas/index.html) when the user needs a visual catalog or interactive demonstration.
 
@@ -44,8 +45,9 @@ If the user names a pattern, honor that choice. Do not replace it with an automa
 3. Add at most one supporting ambient or polish pattern when it materially improves hierarchy.
 4. Preserve the project's existing animation stack. For Web, prefer native CSS or Web Animations API when no animation library is already present. For Video, route through the selected video engine and its own authoring workflow.
 5. Implement the smallest complete version that preserves timing, easing, and spatial continuity, plus interruption behavior for Web or seek behavior for Video.
-6. Apply the medium-specific verification contract: browser interaction and accessibility for Web; seek safety, representative frames, aspect ratio, and actual preview/render for Video.
-7. Return the finished artifact or code, selected pattern name, and editable parameters.
+6. Match the selected recipe's canonical profile. When the user expects the Atlas look, preserve its movement values and named scene-level timing rather than substituting a generic animation.
+7. Apply the medium-specific verification contract: browser interaction and accessibility for Web; seek safety, representative frames, aspect ratio, and actual preview/render for Video.
+8. Return the finished artifact or code, selected pattern name, and editable parameters.
 
 ## Output Contract
 
@@ -66,6 +68,7 @@ This skill is a cross-media motion decision and craft layer. It is not an animat
 - For Video, use HyperFrames by default unless the user names another framework or an existing project establishes one. Follow `/hyperframes` routing rather than guessing a workflow.
 - Use Remotion when the user explicitly requests it or the target is an existing Remotion project.
 - Translate interaction meaning into video time; do not reproduce hover, pointer, viewport, or scroll events literally in a rendered composition.
+- Core 12 does not replace a complete gesture, sheet, shared-layout, or component micro-interaction system.
 
 ## Quality Bar
 

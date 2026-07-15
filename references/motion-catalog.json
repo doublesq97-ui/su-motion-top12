@@ -1,6 +1,6 @@
 {
   "name": "SU Motion Top 12",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "coreCount": 12,
   "motions": [
     {
@@ -13,11 +13,18 @@
       "triggers": ["mount", "system response"],
       "useWhen": ["the act of text arriving communicates generation or live response"],
       "avoidWhen": ["paragraphs", "essential instructions", "frequent repeated use"],
-      "timing": {"durationMs": 1900, "easing": "steps"},
+      "timing": {"durationMs": 1900, "unitMs": 52, "model": "content-length", "easing": "steps"},
       "properties": ["text content", "opacity"],
       "loop": false,
       "reducedMotion": "Render the complete text immediately.",
-      "observedIn": ["signalis-observability"]
+      "observedIn": ["signalis-observability"],
+      "display": {
+        "category": "Text / 文本",
+        "timingLabel": "52 ms / character",
+        "easingLabel": "stepped",
+        "sourceLabels": ["Signalis"],
+        "description": "Characters appear in measured steps with a live caret."
+      }
     },
     {
       "index": 2,
@@ -33,7 +40,14 @@
       "properties": ["opacity", "transform", "filter"],
       "loop": false,
       "reducedMotion": "Use a 180ms opacity crossfade without blur or translation.",
-      "observedIn": ["job-board-1", "wanderlux-travel", "signalis-observability"]
+      "observedIn": ["job-board-1", "wanderlux-travel", "signalis-observability"],
+      "display": {
+        "category": "Entrance / 入场",
+        "timingLabel": "900 ms",
+        "easingLabel": "power3.out",
+        "sourceLabels": ["Job Board", "Wanderlux", "Signalis"],
+        "description": "Opacity, blur and vertical translation resolve together."
+      }
     },
     {
       "index": 3,
@@ -49,7 +63,14 @@
       "properties": ["opacity", "transform"],
       "loop": false,
       "reducedMotion": "Use a short opacity crossfade.",
-      "observedIn": ["wanderlux-travel", "job-board-1"]
+      "observedIn": ["wanderlux-travel", "job-board-1"],
+      "display": {
+        "category": "Entrance / 入场",
+        "timingLabel": "760 ms",
+        "easingLabel": "power4.out",
+        "sourceLabels": ["Wanderlux", "Job Board"],
+        "description": "Elements enter from meaningful opposing directions."
+      }
     },
     {
       "index": 4,
@@ -65,7 +86,14 @@
       "properties": ["clip-path", "transform", "opacity"],
       "loop": false,
       "reducedMotion": "Reveal content immediately with a 180ms opacity crossfade.",
-      "observedIn": ["autonomous-systems", "paperflow-design-layout"]
+      "observedIn": ["autonomous-systems", "paperflow-design-layout"],
+      "display": {
+        "category": "Entrance / 入场",
+        "timingLabel": "1100 ms",
+        "easingLabel": "expo.out",
+        "sourceLabels": ["Autonomous Systems", "Paperflow"],
+        "description": "A clipping surface uncovers content without moving its layout."
+      }
     },
     {
       "index": 5,
@@ -81,7 +109,14 @@
       "properties": ["opacity", "transform"],
       "loop": false,
       "reducedMotion": "Show content without translation; an optional short fade is allowed.",
-      "observedIn": ["aurel-luxury", "terrasprint-ai", "substance-lab"]
+      "observedIn": ["aurel-luxury", "terrasprint-ai", "substance-lab"],
+      "display": {
+        "category": "Scroll / 滚动",
+        "timingLabel": "780 ms reveal · 1800 ms scene",
+        "easingLabel": "power3.out + power2.inOut",
+        "sourceLabels": ["Aurel Luxury", "TerraSprint", "Substance Lab"],
+        "description": "A finite scene traversal combines with paced item arrivals."
+      }
     },
     {
       "index": 6,
@@ -97,7 +132,14 @@
       "properties": ["transform", "opacity", "box-shadow"],
       "loop": true,
       "reducedMotion": "Use a static edge highlight without a moving sweep.",
-      "observedIn": ["oravia", "deciding-health", "signalis-observability"]
+      "observedIn": ["oravia", "deciding-health", "signalis-observability"],
+      "display": {
+        "category": "Polish / 质感",
+        "timingLabel": "900 ms",
+        "easingLabel": "power2.inOut",
+        "sourceLabels": ["Oravia", "Deciding Health", "Signalis"],
+        "description": "A narrow specular highlight crosses the material with a visible bright core."
+      }
     },
     {
       "index": 7,
@@ -113,7 +155,14 @@
       "properties": ["transform"],
       "loop": true,
       "reducedMotion": "Replace with a static wrapped row or user-controlled horizontal scroll.",
-      "observedIn": ["aurel-luxury", "job-board-1", "meridian-biological", "luxury-real-estate"]
+      "observedIn": ["aurel-luxury", "job-board-1", "meridian-biological", "luxury-real-estate"],
+      "display": {
+        "category": "Loop / 循环",
+        "timingLabel": "9000 ms",
+        "easingLabel": "linear",
+        "sourceLabels": ["Aurel Luxury", "Job Board", "Meridian", "Luxury Real Estate"],
+        "description": "A seamless duplicated track creates continuous motion."
+      }
     },
     {
       "index": 8,
@@ -129,7 +178,14 @@
       "properties": ["stroke-dashoffset", "opacity"],
       "loop": false,
       "reducedMotion": "Show the complete path immediately and fade nodes in.",
-      "observedIn": ["oravia", "job-board-1", "signalis-observability"]
+      "observedIn": ["oravia", "job-board-1", "signalis-observability"],
+      "display": {
+        "category": "Data / 数据",
+        "timingLabel": "1700 ms",
+        "easingLabel": "power2.inOut",
+        "sourceLabels": ["Oravia", "Job Board", "Signalis"],
+        "description": "Stroke dash offset turns a path into an unfolding signal."
+      }
     },
     {
       "index": 9,
@@ -145,7 +201,14 @@
       "properties": ["numeric interpolation", "transform"],
       "loop": false,
       "reducedMotion": "Show the final value with a short opacity change.",
-      "observedIn": ["signalis-observability", "strategic-roadmap"]
+      "observedIn": ["signalis-observability", "strategic-roadmap"],
+      "display": {
+        "category": "Data / 数据",
+        "timingLabel": "1600 ms",
+        "easingLabel": "power3.out",
+        "sourceLabels": ["Signalis", "Strategic Roadmap"],
+        "description": "Tabular digits interpolate toward a meaningful value."
+      }
     },
     {
       "index": 10,
@@ -161,7 +224,14 @@
       "properties": ["canvas state", "opacity", "transform"],
       "loop": true,
       "reducedMotion": "Render a static network frame.",
-      "observedIn": ["spectra", "autonomous-systems", "oravia"]
+      "observedIn": ["spectra", "autonomous-systems", "oravia"],
+      "display": {
+        "category": "Ambient / 环境",
+        "timingLabel": "continuous",
+        "easingLabel": "time-driven",
+        "sourceLabels": ["Spectra", "Autonomous Systems", "Oravia"],
+        "description": "Canvas particles orbit, connect and respond as one system."
+      }
     },
     {
       "index": 11,
@@ -177,7 +247,14 @@
       "properties": ["transform"],
       "loop": true,
       "reducedMotion": "Freeze layers at their resting positions.",
-      "observedIn": ["substance-lab", "meridian-migration"]
+      "observedIn": ["substance-lab", "meridian-migration"],
+      "display": {
+        "category": "Spatial / 空间",
+        "timingLabel": "2400 ms",
+        "easingLabel": "sine.inOut",
+        "sourceLabels": ["Substance Lab", "Meridian Migration"],
+        "description": "Foreground and background move at different rates to express depth."
+      }
     },
     {
       "index": 12,
@@ -193,7 +270,14 @@
       "properties": ["transform"],
       "loop": true,
       "reducedMotion": "Keep objects static.",
-      "observedIn": ["terrasprint-ai", "job-board-1", "lumina-solid-cologne"]
+      "observedIn": ["terrasprint-ai", "job-board-1", "lumina-solid-cologne"],
+      "display": {
+        "category": "Ambient / 环境",
+        "timingLabel": "3200 ms",
+        "easingLabel": "sine.inOut",
+        "sourceLabels": ["TerraSprint", "Job Board", "Lumina"],
+        "description": "Slow, offset oscillations keep a resting composition alive."
+      }
     }
   ]
 }
