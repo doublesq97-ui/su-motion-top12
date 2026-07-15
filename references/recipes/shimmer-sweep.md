@@ -11,15 +11,15 @@
   "delayMs": 160,
   "repeatDelayMs": 1400,
   "entrance": {"durationMs": 540, "fromYpx": 14, "fromOpacity": 0, "fromBrightness": 0.9},
-  "sweep": {"fromXPercent": -230, "toXPercent": 690},
-  "surface": {"peakBrightness": 1.12, "pulseDurationMs": 180},
+  "sweep": {"leftPercent": -45, "widthPercent": 34, "fromXPercent": 0, "toXPercent": 460, "skewDeg": -14, "opacity": 0.72},
+  "surface": {"peakBrightness": 1.045, "peakBorderAlpha": 0.18, "pulseDurationMs": 220},
   "completionDelayMs": 650
 }
 ~~~
 
 ## Why it fits
 
-Use one narrow specular pass to communicate material or loading. The bright core should be visible; the whole surface should not flash.
+Use one soft specular pass to communicate material or loading. The highlight needs enough width and travel to cross the full surface, while its core stays restrained enough that the whole card never flashes.
 
 ## Reference implementation
 
@@ -31,9 +31,25 @@ surface.animate(
   ],
   {duration: 540, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'both'}
 );
+Object.assign(sweep.style, {
+  left: '-45%',
+  width: '34%',
+  opacity: '.72'
+});
 sweep.animate(
-  [{transform: 'translateX(-230%)'}, {transform: 'translateX(690%)'}],
+  [
+    {transform: 'translateX(0) skewX(-14deg)'},
+    {transform: 'translateX(460%) skewX(-14deg)'}
+  ],
   {duration: 900, delay: 160, easing: 'cubic-bezier(0.45, 0, 0.55, 1)'}
+);
+surface.animate(
+  [
+    {filter: 'brightness(1)', borderColor: 'rgba(255,255,255,.12)'},
+    {filter: 'brightness(1.045)', borderColor: 'rgba(255,255,255,.18)'},
+    {filter: 'brightness(1)', borderColor: 'rgba(255,255,255,.12)'}
+  ],
+  {duration: 440, delay: 460, easing: 'ease-in-out'}
 );
 ~~~
 
@@ -46,6 +62,7 @@ Use a static edge or material highlight. Do not move the specular band.
 ## Verification
 
 - Only one surface sweeps in the focal region.
-- The moving band has one restrained bright core.
+- The band begins fully outside one edge and clears the opposite edge; most of the 900ms pass is visible on the material.
+- The moving band has one restrained bright core and the surface stays at or below `brightness(1.045)`.
 - The loop stops when the surface leaves or the state ends.
 - Text contrast remains readable at peak brightness.

@@ -45,7 +45,7 @@ If the user names a pattern, honor that choice. Do not replace it with an automa
 3. Add at most one supporting ambient or polish pattern when it materially improves hierarchy.
 4. Preserve the project's existing animation stack. For Web, prefer native CSS or Web Animations API when no animation library is already present. For Video, route through the selected video engine and its own authoring workflow.
 5. Implement the smallest complete version that preserves timing, easing, and spatial continuity, plus interruption behavior for Web or seek behavior for Video.
-6. Match the selected recipe's canonical profile. When the user expects the Atlas look, preserve its movement values and named scene-level timing rather than substituting a generic animation.
+6. Start from the selected recipe's canonical profile. With no requested changes, reproduce the Atlas movement values and named scene-level timing. Treat the profile as a calibrated default rather than an immutable preset; apply requested tuning under the Quality Preservation Redlines in the implementation contract.
 7. Apply the medium-specific verification contract: browser interaction and accessibility for Web; seek safety, representative frames, aspect ratio, and actual preview/render for Video.
 8. Return the finished artifact or code, selected pattern name, and editable parameters.
 

@@ -53,6 +53,18 @@ The user always invokes `su-motion-top12`:
 
 Core 12 owns selection, rhythm, composition, and craft. The target engine owns code, media, rendering, and export.
 
+## Atlas Parity, With Room to Tune
+
+Motion Atlas is an implementation reference that can be delivered as shown. Unless the user asks for a change, the agent uses the same canonical profile so timing, travel, stagger, light response, and fallbacks match the showcase.
+
+A 1:1 baseline does not lock the parameters. Ask the agent in natural language to tune speed, travel or float amplitude, sweep coverage, scale, density, regions, or spatial topology. The agent preserves the motion's intent, visual hierarchy, and quality redlines while changing only the requested dimensions.
+
+> Keep the overall character of 06 Shimmer Sweep, slow the pass by 15%, widen its coverage, and make the light response more restrained.
+
+> Keep the hierarchy of 10 Orbit Network, replace the planar orbit with three connected regions, then explore a spherical projection.
+
+SU Motion Top 12 is made for restrained, refined, legible motion with a clear sense of order—motion that supports the product instead of competing with its content.
+
 ## Why Only 12
 
 Core 12 is a stable default set, not a capacity limit:
@@ -91,6 +103,13 @@ Core 12 does not replace a complete gesture, sheet, shared-element, or component
 - `references/video-adapter.md`: frame, shot, timeline, HyperFrames, and Remotion translation.
 - `references/recipes/`: twelve on-demand implementation recipes; only the selected motion is loaded.
 - `scripts/build-atlas.mjs`: generates the Atlas payload from the catalog and recipe profiles.
+
+## v0.3.1 Craft Fixes
+
+- **A complete 06 pass:** removes the duplicated starting translation, lets the light band enter, cross, and clear the full material, and lowers the peak light response.
+- **Extensible 10 topology:** the Atlas keeps its planar showcase while the implementation can also render connected regions and a spherical shell without changing Motion 10's identity.
+- **1:1 without hard locks:** canonical profiles remain the delivery defaults; requested parameters can be tuned while untouched structure and quality redlines stay stable.
+- **Regression protection:** automated checks now cover Shimmer Sweep width and brightness limits, Orbit Network topology support, and Canvas resolution limits.
 
 ## What v0.3.0 Adds
 

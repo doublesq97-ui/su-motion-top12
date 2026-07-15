@@ -1,6 +1,6 @@
 {
   "name": "SU Motion Top 12",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "coreCount": 12,
   "motions": [
     {
@@ -138,7 +138,7 @@
         "timingLabel": "900 ms",
         "easingLabel": "power2.inOut",
         "sourceLabels": ["Oravia", "Deciding Health", "Signalis"],
-        "description": "A narrow specular highlight crosses the material with a visible bright core."
+        "description": "A soft specular pass crosses the full material without flashing the surface."
       }
     },
     {
@@ -216,21 +216,21 @@
       "name": "Orbit Network",
       "zh": "轨道与网络",
       "role": "ambient",
-      "intent": ["system activity", "relationships", "technical atmosphere"],
+      "intent": ["system activity", "relationships", "spatial topology", "technical atmosphere"],
       "triggers": ["idle", "pointer"],
-      "useWhen": ["a central system and its connections need a living spatial metaphor"],
+      "useWhen": ["relationships need a living spatial topology with clear hierarchy"],
       "avoidWhen": ["the canvas competes with reading", "battery or rendering budget is constrained"],
       "timing": {"durationMs": 0, "easing": "time-driven"},
-      "properties": ["canvas state", "opacity", "transform"],
+      "properties": ["canvas state", "layout strategy", "opacity", "transform"],
       "loop": true,
-      "reducedMotion": "Render a static network frame.",
+      "reducedMotion": "Render a deterministic static frame for the selected topology.",
       "observedIn": ["spectra", "autonomous-systems", "oravia"],
       "display": {
         "category": "Ambient / 环境",
         "timingLabel": "continuous",
         "easingLabel": "time-driven",
         "sourceLabels": ["Spectra", "Autonomous Systems", "Oravia"],
-        "description": "Canvas particles orbit, connect and respond as one system."
+        "description": "One system can orbit, cluster, or project into a spatial network."
       }
     },
     {

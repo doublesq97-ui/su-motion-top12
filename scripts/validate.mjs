@@ -56,7 +56,7 @@ if (!Array.isArray(catalog.motions) || catalog.motions.length !== 12) {
   fail('motions must contain exactly 12 entries');
 }
 if (catalog.version !== packageMetadata.version) fail('catalog and package versions must match');
-if (packageMetadata.version !== '0.3.0') fail('release version must be 0.3.0');
+if (packageMetadata.version !== '0.3.1') fail('release version must be 0.3.1');
 if (Object.keys(packageMetadata.dependencies || {}).length) fail('runtime dependencies must remain empty');
 if (catalog.motions.map((motion) => motion.id).join(',') !== expectedOrder.join(',')) {
   fail('motions must preserve the stable Core 12 order');
@@ -113,6 +113,20 @@ for (const [index, motion] of catalog.motions.entries()) {
   if (motion.id === 'shimmer-sweep') {
     if (recipe.profile.delayMs !== motion.timing.delayMs) fail(label + ': recipe delay must match catalog timing');
     if (recipe.profile.repeatDelayMs !== motion.timing.repeatDelayMs) fail(label + ': recipe repeat delay must match catalog timing');
+    if (recipe.profile.sweep.fromXPercent >= recipe.profile.sweep.toXPercent) fail(label + ': sweep must travel forward across the surface');
+    if (recipe.profile.sweep.widthPercent < 28) fail(label + ': sweep band is too narrow for full-surface coverage');
+    if (recipe.profile.surface.peakBrightness > 1.06) fail(label + ': peak surface brightness exceeds the restrained quality redline');
+    if (recipe.profile.surface.peakBorderAlpha > 0.2) fail(label + ': peak border response exceeds the restrained quality redline');
+  }
+  if (motion.id === 'orbit-network') {
+    const builtIn = recipe.profile.topologies?.builtIn || [];
+    for (const topology of ['orbital-plane', 'clustered-regions', 'spherical-shell']) {
+      if (!builtIn.includes(topology)) fail(label + ': missing built-in topology ' + topology);
+    }
+    if (!builtIn.includes(recipe.profile.showcase?.topology)) fail(label + ': showcase topology must be selected from built-in topologies');
+    if (recipe.profile.topologies?.extensionMode !== 'strategy-registry') fail(label + ': topology extension must remain strategy-based');
+    if (recipe.profile.showcase?.nodeCount < 12) fail(label + ': showcase network is too sparse');
+    if (recipe.profile.render?.maxDevicePixelRatio > 2) fail(label + ': canvas device pixel ratio cap must remain at or below 2');
   }
   if (motion.id === 'scroll-reveal' && !motion.display.timingLabel.includes(String(recipe.profile.showcaseScene.durationMs))) {
     fail(label + ': display timing must name the showcase scene duration');
@@ -155,8 +169,10 @@ for (const [name, content, phrase] of [
   ['readme', readme, '[English](README.en.md)'],
   ['readme', readme, 'https://doublesq97-ui.github.io/su-motion-top12/'],
   ['readme', readme, '请将下述开源项目安装，并告知我如何使用调用：'],
+  ['readme', readme, '1:1 复现不等于锁死参数'],
   ['english readme', readmeEnglish, '[中文](README.md)'],
   ['english readme', readmeEnglish, '## Installation'],
+  ['english readme', readmeEnglish, 'A 1:1 baseline does not lock the parameters'],
 ]) {
   if (!content.includes(phrase)) fail(name + ': missing ' + phrase);
 }

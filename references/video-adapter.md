@@ -52,7 +52,7 @@ Do not reproduce browser events literally inside a rendered video. Translate the
 | `marquee` | Brand rhythm, credits, inventory, or continuous information | Use a seamless time-based track with enough duplicated content to avoid a visible seam. |
 | `line-drawing` | Route, connection, process, or signal explanation | Drive SVG stroke progress or a seek-safe path reveal from frame time. |
 | `number-ticker` | Metric reveal, achievement, or comparison | Interpolate the numeric value from frame progress and finish on an exact, stable value. |
-| `orbit-network` | System map, relationship field, or technical atmosphere | Derive node positions and connections from composition time; render a deterministic frame at any seek position. |
+| `orbit-network` | System map, relationship field, or technical atmosphere | Select a planar, clustered, spherical, or project-specific topology; derive every node and connection from composition time so any seek position stays deterministic. |
 | `parallax-depth` | Camera depth, layer separation, or dimensional product scene | Move foreground, subject, and background at different rates with a clear focal hierarchy. |
 | `float-levitate` | Quiet product atmosphere or weightless ambient motion | Use slow deterministic oscillation on one or two nonessential objects; keep copy stable. |
 
