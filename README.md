@@ -2,49 +2,27 @@
 
 **中文** | [English](#english)
 
-> 不是再造一个动画库，而是给 AI 一层经过筛选的 Web 与 Video Motion 决策和质感标准。
+给 AI 用的精选动效图谱：从 12 个高频、精致的 Motion 中快速完成选型、实现和验证。
+同一套动效标准可用于实时网页，也可转换为 HyperFrames 或 Remotion 视频。
 
-`SU Motion Top 12` 是一个面向 AI 编程与创作工具的跨媒介动效图谱：12 个高频、精致、可解释、可验证的 Motion，由同一套 Core 12 服务实时网页和帧驱动视频，并通过不同适配层交给 CSS、GSAP、Motion、HyperFrames 或 Remotion 实现。
+## 在线体验
 
-## 先体验
+[打开 Motion Atlas 网页演示 →](https://doublesq97-ui.github.io/su-motion-top12/)
 
-[打开可点击的 Motion Atlas →](assets/motion-atlas/index.html)
+点击任一动效即可播放、重播并复制参数；支持 System、Light、Dark 三种主题。
 
-Web 演示支持 System、Light、Dark 三态主题。点击左侧任一 Motion，右侧会立即播放；底部可以查看用途、参数、来源并复制 JSON。
+![6 个代表动效：Typewriter、Fade & Blur、Mask Reveal、Shimmer Sweep、Line Drawing、Orbit Network](assets/motion-atlas/previews/showcase.gif)
 
-如果 GitHub 没有直接运行 HTML，请先克隆仓库，再启动本地预览：
+## 如何安装
 
-```bash
-python3 -m http.server 4173
-# 浏览器访问 http://localhost:4173/assets/motion-atlas/
-```
-
-## 安装到 Codex
-
-最简单的方法，是把下面这段话和当前仓库链接一起发给 Codex：
+在 Codex 中发送：
 
 ```text
-请把这个 GitHub 仓库安装为我本机的 Codex Skill。
-仓库地址：https://github.com/doublesq97-ui/su-motion-top12
-目标目录：~/.codex/skills/su-motion-top12
-
-安装前先检查是否已经存在同名目录；不要直接覆盖我的本地修改。
-安装完成后读取 SKILL.md，运行 npm run validate，并告诉我验证结果和使用方式。
+请将下述开源项目安装，并告知我如何使用调用：
+链接：https://github.com/doublesq97-ui/su-motion-top12
 ```
 
-也可以手动安装：
-
-```bash
-git clone https://github.com/doublesq97-ui/su-motion-top12.git ~/.codex/skills/su-motion-top12
-cd ~/.codex/skills/su-motion-top12
-npm run validate
-```
-
-## 开始使用
-
-```text
-用 su-motion-top12 给我看常用网页动效目录。
-```
+## 如何调用
 
 ```text
 用 su-motion-top12 为这个产品 Hero 选择并实现一个克制的入场动效。
@@ -55,7 +33,14 @@ npm run validate
 ```
 
 ```text
-用 su-motion-top12 为这段 9:16 HyperFrames 产品视频选择并实现一个主 Motion，完成预览和渲染验证。
+用 su-motion-top12 为这段 9:16 产品视频选择并实现一个主 Motion。
+```
+
+手动安装（可选）：
+
+```bash
+git clone https://github.com/doublesq97-ui/su-motion-top12.git ~/.codex/skills/su-motion-top12
+cd ~/.codex/skills/su-motion-top12 && npm run validate
 ```
 
 ## 一个 Skill，两条执行路径
