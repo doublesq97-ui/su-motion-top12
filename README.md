@@ -11,7 +11,7 @@
 
 点击任一动效即可播放、重播并复制参数；支持 System、Light、Dark 三种主题。
 
-![6 个代表动效：Typewriter、Fade & Blur、Mask Reveal、Shimmer Sweep、Line Drawing、Orbit Network](assets/motion-atlas/previews/showcase.gif)
+![6 个代表动效：Typewriter、Fade & Blur、Marquee、Line Drawing、Number Ticker、Mask Reveal](assets/motion-atlas/previews/showcase.gif)
 
 ## 如何安装
 
