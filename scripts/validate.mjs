@@ -7,6 +7,9 @@ import {fileURLToPath} from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const catalogPath = path.join(root, 'references', 'motion-catalog.json');
 const demoPath = path.join(root, 'assets', 'motion-atlas', 'index.html');
+const pagesIndexPath = path.join(root, 'index.html');
+const showcasePath = path.join(root, 'assets', 'motion-atlas', 'previews', 'showcase.gif');
+const readmePath = path.join(root, 'README.md');
 const skillPath = path.join(root, 'SKILL.md');
 const implementationPath = path.join(root, 'references', 'implementation-contract.md');
 const videoAdapterPath = path.join(root, 'references', 'video-adapter.md');
@@ -14,6 +17,8 @@ const agentMetadataPath = path.join(root, 'agents', 'openai.yaml');
 const packagePath = path.join(root, 'package.json');
 const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
 const demo = fs.readFileSync(demoPath, 'utf8');
+const pagesIndex = fs.readFileSync(pagesIndexPath, 'utf8');
+const readme = fs.readFileSync(readmePath, 'utf8');
 const skill = fs.readFileSync(skillPath, 'utf8');
 const implementation = fs.readFileSync(implementationPath, 'utf8');
 const videoAdapter = fs.readFileSync(videoAdapterPath, 'utf8');
@@ -82,6 +87,11 @@ if (!demo.includes('data-theme-option="light"')) errors.push('demo: missing ligh
 if (!demo.includes('data-theme-option="dark"')) errors.push('demo: missing dark theme control');
 if (!demo.includes('id="motionList"')) errors.push('demo: missing single Core 12 motion list');
 if (!demo.includes('id="dockDescription"')) errors.push('demo: missing expanded motion detail content');
+if (!pagesIndex.includes('assets/motion-atlas/')) errors.push('pages: root index must route to the Motion Atlas');
+if (!fs.existsSync(showcasePath)) errors.push('readme: missing six-motion showcase GIF');
+if (!readme.includes('https://doublesq97-ui.github.io/su-motion-top12/')) errors.push('readme: missing GitHub Pages link');
+if (!readme.includes('assets/motion-atlas/previews/showcase.gif')) errors.push('readme: missing showcase GIF');
+if (!readme.includes('请将下述开源项目安装，并告知我如何使用调用：')) errors.push('readme: missing simple Codex install prompt');
 for (const legacyRail of ['topRail', 'leftRail', 'rightRail', 'mobileRail']) {
   if (demo.includes(legacyRail)) errors.push(`demo: legacy rail remains: ${legacyRail}`);
 }
