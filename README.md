@@ -156,6 +156,16 @@ AI 可以自动选择 Motion，但交付中只需要给出选型、参数和成�
 
 本项目与 HyperFrames、Remotion、Motion、GSAP 均无官方隶属或背书关系。
 
+---
+
+> ### 继续探索 Su 的开源项目
+>
+> 动效选型之外，网页风格、视频生产和 AI 协作也有对应工具。
+>
+> **[查看 Su 的其他开源项目 →](https://github.com/doublesq97-ui/su-mit-index)**
+
+---
+
 ## License
 
 原创代码和文档使用 MIT License。字体和外部运行库保留各自许可，详见 `THIRD_PARTY_NOTICES.md`。
