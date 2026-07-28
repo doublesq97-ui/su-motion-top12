@@ -139,6 +139,16 @@ SU Motion Top 12 is a complementary decision and craft layer. It is not affiliat
 - Browser-level verification for Web.
 - Seek safety, representative frames, aspect-ratio safety, and actual preview/render verification for Video.
 
+---
+
+> ### Explore more open-source projects by Su
+>
+> Beyond motion selection, Su's open-source projects also cover web design, video production, and AI collaboration.
+>
+> **[Browse Su MIT Index →](https://github.com/doublesq97-ui/su-mit-index)**
+
+---
+
 ## License
 
 Original code and documentation are MIT licensed. Fonts and external runtimes retain their own licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
